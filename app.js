@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   console.log('Sucess..!')
-  res.json({ message: 'Hello, Azure.' })
+  res.json({ message: 'Hello, Azure Version 2.' })
 });
 
 
@@ -19,6 +19,17 @@ app.get('/error', (req, res) => {
   } catch (err) {
     console.log('Error 500');
     return res.status(500).json({ error: err.message })
+  }
+  res.json({ message: '' })
+});
+
+app.get('/err', (req, res) => {
+  try {
+    const wrong = 1
+    wrong = 2
+  } catch (err) {
+    console.log('Error 503');
+    return res.status(503).json({ error: err.message })
   }
   res.json({ message: '' })
 });
