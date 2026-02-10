@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   console.log('Sucess..!')
-  res.json({ message: 'Hello, From Application Hosted on App Services , This is my live application running on version2' })
+  res.json({ message: 'Hello, From Application Hosted on App Services. })
 });
 
 
